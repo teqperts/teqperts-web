@@ -47,16 +47,16 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden">
 
   <!-- Top Notification / Teqperts Parent Banner -->
-  <div class="bg-slate-900 text-slate-300 px-4 py-2 text-xs flex items-center justify-between border-b border-slate-800">
-    <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+  <div class="bg-slate-900 text-slate-300 px-4 py-2 text-xs border-b border-slate-800">
+    <div class="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-0 text-center sm:text-left">
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
+        <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block shrink-0"></span>
         <span>A product engineered by <a href="../" class="font-bold text-white hover:underline">Teqperts</a></span>
       </div>
-      <a href="../" class="text-slate-400 hover:text-white transition flex items-center gap-1 font-medium">
+      <a href="../" class="text-slate-400 hover:text-white transition flex items-center gap-1 font-medium text-[11px] sm:text-xs">
         Back to Teqperts Home <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
       </a>
     </div>
@@ -67,53 +67,69 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
-        <a href="./" class="flex items-center gap-3">
-          <img src="../assets/images/cellventory-icon.png" alt="Cellventory Icon" class="h-10 w-10 rounded-xl shadow-sm object-cover" />
+        <a href="./" class="flex items-center gap-2.5 sm:gap-3">
+          <img src="../assets/images/cellventory-icon.png" alt="Cellventory Icon" class="h-9 w-9 sm:h-10 sm:w-10 rounded-xl shadow-sm object-cover shrink-0" />
           <div>
-            <span class="font-extrabold text-2xl tracking-tight text-slate-900">CELLVENTORY</span>
-            <div class="text-[10px] font-semibold text-brand-700 uppercase tracking-widest">Mobile Shop OS</div>
+            <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900">CELLVENTORY</span>
+            <div class="text-[9px] sm:text-[10px] font-semibold text-brand-700 uppercase tracking-widest">Mobile Shop OS</div>
           </div>
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
           <a href="#features" class="hover:text-brand-700 transition">Features</a>
           <a href="#how-it-works" class="hover:text-brand-700 transition">How It Works</a>
           <a href="#faq" class="hover:text-brand-700 transition">FAQs</a>
           <a href="#contact" class="hover:text-brand-700 transition">Shop Inquiries</a>
         </nav>
 
-        <!-- CTA Buttons -->
-        <div class="flex items-center gap-3">
-          <a href="#download" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-brand-700 hover:bg-brand-800 rounded-xl shadow-sm hover:shadow transition">
-            <i data-lucide="download" class="w-4 h-4"></i>
-            Download App
+        <!-- CTA & Mobile Actions -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="#download" class="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-white bg-brand-700 hover:bg-brand-800 rounded-xl shadow-sm hover:shadow transition">
+            <i data-lucide="download" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+            <span>Download<span class="hidden sm:inline"> App</span></span>
           </a>
+          <!-- Mobile Menu Button -->
+          <button id="cellventoryMobileMenuBtn" aria-label="Toggle menu" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
         </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="cellventoryMobileMenu" class="hidden lg:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+      <a href="#features" class="cell-mobile-link block py-2 text-base font-medium text-slate-700 hover:text-brand-700">Features</a>
+      <a href="#how-it-works" class="cell-mobile-link block py-2 text-base font-medium text-slate-700 hover:text-brand-700">How It Works</a>
+      <a href="#download" class="cell-mobile-link block py-2 text-base font-semibold text-brand-700">Download Android APK</a>
+      <a href="#faq" class="cell-mobile-link block py-2 text-base font-medium text-slate-700 hover:text-brand-700">FAQs</a>
+      <a href="#contact" class="cell-mobile-link block py-2 text-base font-medium text-slate-700 hover:text-brand-700">Shop Inquiries</a>
+      <div class="pt-2 border-t border-slate-100">
+        <a href="../" class="block text-center w-full py-2.5 font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg text-sm">Back to Teqperts Home</a>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 bg-gradient-to-b from-brand-50/50 via-white to-slate-50 overflow-hidden">
+  <section class="relative pt-12 pb-16 sm:pt-16 sm:pb-20 md:pt-24 md:pb-28 bg-gradient-to-b from-brand-50/50 via-white to-slate-50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         <!-- Left Content -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 border border-brand-200 text-brand-900 text-xs font-semibold">
             <i data-lucide="shield-check" class="w-4 h-4 text-brand-700"></i>
             100% Offline-First • Zero Cloud Fees • Built for Mobile Shops
           </div>
           
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] sm:leading-[1.12]">
             The smarter way to manage <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-700 to-blue-600">repairs, inventory & walk-ins.</span>
           </h1>
 
-          <p class="text-lg sm:text-xl text-slate-600 leading-relaxed font-normal">
+          <p class="text-base sm:text-xl text-slate-600 leading-relaxed font-normal">
             Eliminate paper register books and confusing spreadsheets. Cellventory puts barcode/IMEI scanning, repair tickets, fast inquiry notes, and customer khata balances directly in your pocket.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 max-w-md mx-auto lg:max-w-none">
             <a href="#download" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 text-base font-bold text-white bg-brand-700 hover:bg-brand-800 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
               <i data-lucide="smartphone" class="w-5 h-5"></i>
               Get Android APK (Free)
@@ -123,17 +139,17 @@
             </a>
           </div>
 
-          <div class="pt-4 flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-500 font-medium">
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs text-slate-500 font-medium">
             <div class="flex items-center gap-1.5">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
               Embedded SQLite
             </div>
             <div class="flex items-center gap-1.5">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
               CSV Export & Backup
             </div>
             <div class="flex items-center gap-1.5">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+              <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
               Luhn IMEI Verification
             </div>
           </div>
@@ -141,11 +157,11 @@
 
         <!-- Right App Interactive Preview Card -->
         <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-full max-w-sm bg-white rounded-3xl p-6 shadow-2xl border border-slate-200">
+          <div class="relative w-full max-w-[340px] sm:max-w-sm bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-slate-200">
             <!-- App Header Mockup -->
             <div class="flex items-center justify-between pb-4 border-b border-slate-100">
               <div class="flex items-center gap-2.5">
-                <img src="../assets/images/cellventory-icon.png" class="w-9 h-9 rounded-xl" alt="App Icon" />
+                <img src="../assets/images/cellventory-icon.png" class="w-9 h-9 rounded-xl shrink-0" alt="App Icon" />
                 <div>
                   <div class="font-extrabold text-sm text-slate-900">CELLVENTORY</div>
                   <div class="text-[10px] text-brand-700 font-medium">Dashboard • Shop Active</div>
@@ -161,7 +177,7 @@
                 <span class="text-[11px] font-semibold text-brand-700">1-Tap</span>
               </div>
               <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-brand-200 shadow-xs">
-                <div class="p-2 bg-brand-700 text-white rounded-lg">
+                <div class="p-2 bg-brand-700 text-white rounded-lg shrink-0">
                   <i data-lucide="camera" class="w-5 h-5"></i>
                 </div>
                 <div>
@@ -197,76 +213,76 @@
   </section>
 
   <!-- Core Features Grid -->
-  <section id="features" class="py-24 bg-white border-t border-slate-200">
+  <section id="features" class="py-16 sm:py-24 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
         <h2 class="text-xs font-bold uppercase tracking-widest text-brand-700 mb-2">Designed for Repair Shops & Retailers</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Everything your phone store needs every day.</h3>
-        <p class="mt-4 text-slate-600 text-base">From the moment a customer walks in with a broken screen to the final handover and payment settlement.</p>
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Everything your phone store needs every day.</h3>
+        <p class="mt-3 sm:mt-4 text-slate-600 text-sm sm:text-base">From the moment a customer walks in with a broken screen to the final handover and payment settlement.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <!-- Feature 1 -->
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
           <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-6">
             <i data-lucide="scan" class="w-6 h-6"></i>
           </div>
-          <h4 class="text-xl font-bold text-slate-900 mb-2">Instant IMEI & Barcode Lookup</h4>
+          <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Instant IMEI & Barcode Lookup</h4>
           <p class="text-slate-600 text-sm leading-relaxed">
             Scan device IMEIs or accessory barcodes directly via your phone's camera. The app automatically checks inventory, matches repeat customers, and verifies Luhn check-digits.
           </p>
         </div>
 
         <!-- Feature 2 -->
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
           <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6">
             <i data-lucide="user-check" class="w-6 h-6"></i>
           </div>
-          <h4 class="text-xl font-bold text-slate-900 mb-2">Fast Walk-in Inquiry Mode</h4>
+          <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Fast Walk-in Inquiry Mode</h4>
           <p class="text-slate-600 text-sm leading-relaxed">
             Customers asking for quick price quotes don't always give full details. Log quick inquiries with optional contact info, and convert them to repairs with 1 tap when they return.
           </p>
         </div>
 
         <!-- Feature 3 -->
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
           <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6">
             <i data-lucide="wallet" class="w-6 h-6"></i>
           </div>
-          <h4 class="text-xl font-bold text-slate-900 mb-2">Advance & Khata Balances</h4>
+          <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Advance & Khata Balances</h4>
           <p class="text-slate-600 text-sm leading-relaxed">
             Track deposit advances paid upon repair intake and see remaining balances due on delivery instantly. Avoid lost revenue and disputes.
           </p>
         </div>
 
         <!-- Feature 4 -->
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
           <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6">
             <i data-lucide="boxes" class="w-6 h-6"></i>
           </div>
-          <h4 class="text-xl font-bold text-slate-900 mb-2">Smart Shop Inventory</h4>
+          <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Smart Shop Inventory</h4>
           <p class="text-slate-600 text-sm leading-relaxed">
             Categorize devices, spare parts, displays, batteries, and accessories. Automatic low-stock warnings notify you before critical inventory runs out.
           </p>
         </div>
 
         <!-- Feature 5 -->
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
           <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mb-6">
             <i data-lucide="database" class="w-6 h-6"></i>
           </div>
-          <h4 class="text-xl font-bold text-slate-900 mb-2">100% Offline & Private</h4>
+          <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">100% Offline & Private</h4>
           <p class="text-slate-600 text-sm leading-relaxed">
             All records live in a high-speed SQLite database on your device. The app operates smoothly without internet connection or recurring monthly subscription lock-in.
           </p>
         </div>
 
         <!-- Feature 6 -->
-        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-300 transition hover:shadow-md">
           <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center mb-6">
             <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
           </div>
-          <h4 class="text-xl font-bold text-slate-900 mb-2">CSV Export & Share</h4>
+          <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">CSV Export & Share</h4>
           <p class="text-slate-600 text-sm leading-relaxed">
             Export full customer logs, repair histories, and stock inventories to standard Excel/CSV spreadsheets with 1 tap. Easily backup or share with your accountant.
           </p>
@@ -276,14 +292,14 @@
   </section>
 
   <!-- How It Works Section -->
-  <section id="how-it-works" class="py-20 bg-slate-50 border-t border-slate-200">
+  <section id="how-it-works" class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <h2 class="text-xs font-bold uppercase tracking-widest text-brand-700 mb-2">Simple Workflow</h2>
-        <h3 class="text-3xl font-extrabold text-slate-900">How Cellventory Speeds Up Your Shop</h3>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">How Cellventory Speeds Up Your Shop</h3>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center space-y-4">
           <div class="w-10 h-10 rounded-full bg-brand-700 text-white font-extrabold text-lg flex items-center justify-center mx-auto">1</div>
           <h4 class="text-lg font-bold text-slate-900">Scan & Intake</h4>
@@ -306,23 +322,23 @@
   </section>
 
   <!-- Download Section -->
-  <section id="download" class="py-24 bg-gradient-to-br from-slate-900 via-brand-950 to-slate-900 text-white relative">
+  <section id="download" class="py-16 sm:py-24 bg-gradient-to-br from-slate-900 via-brand-950 to-slate-900 text-white relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center space-y-8">
+      <div class="max-w-3xl mx-auto text-center space-y-6 sm:space-y-8">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-semibold">
           <i data-lucide="download-cloud" class="w-4 h-4"></i>
           Direct Android Distribution
         </div>
 
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
           Download Cellventory for Android
         </h2>
 
-        <p class="text-slate-300 text-base sm:text-lg">
+        <p class="text-slate-300 text-sm sm:text-lg">
           Install the APK directly on any Android smartphone, tablet, or handheld POS terminal. Works 100% offline.
         </p>
 
-        <div class="p-8 bg-slate-800/80 rounded-3xl border border-slate-700 max-w-lg mx-auto space-y-6 shadow-xl">
+        <div class="p-6 sm:p-8 bg-slate-800/80 rounded-2xl sm:rounded-3xl border border-slate-700 max-w-lg mx-auto space-y-6 shadow-xl">
           <div class="flex items-center justify-between pb-4 border-b border-slate-700 text-left">
             <div>
               <div class="font-bold text-white text-base">Cellventory Release v1.0.0</div>
@@ -335,7 +351,7 @@
           <div class="space-y-3">
             <a href="https://expo.dev/artifacts/eas/XQTG8fEn8DSDv8OXx2itI0jS99YoVharAo9a5tNzBYs.apk" download="Cellventory-v1.0.0.apk" class="w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl transition shadow-lg text-base">
               <i data-lucide="download" class="w-5 h-5"></i>
-              Download Cellventory APK (120 MB)
+              Download Cellventory APK
             </a>
             <div class="text-[11px] text-slate-400">Direct APK download • Signed, Standalone & Auto-Updating (OTA)</div>
           </div>
@@ -355,24 +371,24 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="py-20 bg-white">
+  <section id="faq" class="py-16 sm:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h3 class="text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h3>
+      <div class="text-center mb-10 sm:mb-12">
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h3>
       </div>
 
       <div class="space-y-4">
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+        <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200">
           <h4 class="font-bold text-slate-900 text-base mb-1">Does Cellventory require a continuous internet connection?</h4>
           <p class="text-slate-600 text-sm">No. Cellventory is engineered offline-first. All inventory, customer visits, repair history, and khata records operate locally on your phone using SQLite.</p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+        <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200">
           <h4 class="font-bold text-slate-900 text-base mb-1">Can I backup my store's records?</h4>
           <p class="text-slate-600 text-sm">Yes. You can export all records to standard CSV files with a single tap, which can be saved to Google Drive, emailed, or opened in Microsoft Excel.</p>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+        <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200">
           <h4 class="font-bold text-slate-900 text-base mb-1">What happens if a walk-in customer doesn't want to provide their phone number?</h4>
           <p class="text-slate-600 text-sm">Inquiry Mode allows you to save notes, device details, and price quotations without requiring a phone number or customer name. When they return, you can convert it to a full repair ticket in 1 tap.</p>
         </div>
@@ -381,18 +397,18 @@
   </section>
 
   <!-- Contact / Custom Shop Deployment -->
-  <section id="contact" class="py-20 bg-slate-900 text-white border-t border-slate-800">
+  <section id="contact" class="py-16 sm:py-20 bg-slate-900 text-white border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-      <h3 class="text-3xl font-extrabold">Need Custom Features for Your Shop Chain?</h3>
+      <h3 class="text-2xl sm:text-3xl font-extrabold">Need Custom Features for Your Shop Chain?</h3>
       <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base">
         Cellventory is developed and maintained by Teqperts. If you need barcode hardware pairing, thermal receipt printers, or custom reporting, get in touch with our team.
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-        <a href="mailto:teqperts@gmail.com?subject=Cellventory%20Shop%20Inquiry" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-700 hover:bg-brand-600 text-white font-semibold rounded-xl transition">
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-4 max-w-md mx-auto sm:max-w-none">
+        <a href="mailto:teqperts@gmail.com?subject=Cellventory%20Shop%20Inquiry" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-700 hover:bg-brand-600 text-white font-semibold rounded-xl transition text-sm sm:text-base">
           <i data-lucide="mail" class="w-5 h-5"></i>
           Email teqperts@gmail.com
         </a>
-        <a href="../" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-700 transition">
+        <a href="../" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-700 transition text-sm sm:text-base">
           Visit teqperts.in
         </a>
       </div>
@@ -400,11 +416,20 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+  <footer class="bg-slate-950 text-slate-400 py-10 sm:py-12 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
       <div class="flex items-center gap-3">
         <img src="../assets/images/teqperts-logo.png" alt="Teqperts Logo" class="h-8 w-auto brightness-90" />
         <span class="text-xs text-slate-400">A product of <strong class="text-white">Teqperts</strong> (teqperts.in)</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-xs text-slate-400">
+        <a href="../" class="hover:text-white transition">Home</a>
+        <a href="#features" class="hover:text-white transition">Features</a>
+        <a href="#how-it-works" class="hover:text-white transition">Workflow</a>
+        <a href="#download" class="hover:text-white transition font-medium text-brand-400">Download APK</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
       </div>
 
       <div class="text-xs text-slate-500">
@@ -416,6 +441,20 @@
   <script>
     lucide.createIcons();
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle & Auto-Close
+    const cellventoryMobileMenuBtn = document.getElementById('cellventoryMobileMenuBtn');
+    const cellventoryMobileMenu = document.getElementById('cellventoryMobileMenu');
+    
+    cellventoryMobileMenuBtn.addEventListener('click', () => {
+      cellventoryMobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.cell-mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        cellventoryMobileMenu.classList.add('hidden');
+      });
+    });
   </script>
 </body>
 </html>
